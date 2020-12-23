@@ -23,7 +23,7 @@ jobs:
           command: |
             pwd
             ls -ltra
-            aws cloudformation deploy --template-file template.yml --stack-name my-stack --region us-west-1
+            aws cloudformation deploy --template-file template.yml --stack-name my-stack #--region us-west-1
             #return 1
       #- destroy_environment
       - run:
