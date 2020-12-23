@@ -12,7 +12,8 @@ version: 2.1
 jobs:
   create_infra:
     docker:
-      - image: amazon/aws-cli
+      #- image: amazon/aws-cli
+      - image: cimg/base:2020.01
     steps:
       - checkout
       ## - add_ssh_keys:
