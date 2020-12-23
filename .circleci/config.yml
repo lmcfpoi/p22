@@ -65,11 +65,11 @@ jobs:
               --stack-name prod-${CIRCLE_WORKFLOW_ID}
       - run: return 1 
       - run:
-        name: "Delete AWS stack for rollback"
-        command: |
-          aws cloudformation delete-stack --stack-name mystack
-      #- destroy_environment
-        when: on_fail
+          name: "Delete AWS stack for rollback"
+          command: |
+            aws cloudformation delete-stack --stack-name mystack
+            #- destroy_environment
+          when: on_fail
 
 workflows:
   my_workflow:
