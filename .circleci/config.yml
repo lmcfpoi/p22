@@ -1,13 +1,12 @@
 version: 2.1
 
-# commands:
-#   destroy_environment:
-#     steps:
-#       - run:
-#           name: "Delete AWS stack for rollback"
-#           command: |
-#             aws cloudformation delete-stack \
-#               --stack-name my-stack
+commands:
+  destroy_environment:
+    steps:
+      - run:
+          name: "Delete AWS stack for rollback"
+          command: |
+            aws cloudformation delete-stack --stack-name my-stack
 
 jobs:
   create_infra:
@@ -24,22 +23,20 @@ jobs:
           command: |
             # pwd
             # ls -ltra
-            yum update
-            #yum install git
-            #yum install ssh
-            aws cloudformation deploy --template-file template.yml --stack-name my-stack --region us-west-1
+            # yum update
+            # #yum install git
+            # #yum install ssh
+            aws cloudformation deploy --template-file template.yml --stack-name my-stack #--region us-west-1
             #return 1
-      #- destroy_environment
-      - run:
-          name: "Delete AWS stack for rollback"
-          command: |
-            aws cloudformation delete-stack \
-              --stack-name my-stack
+      - destroy_environment
+      # - run:
+      #     name: "Delete AWS stack for rollback"
+      #     command: |
+      #       aws cloudformation delete-stack \
+      #         --stack-name my-stack
           when: on_fail
 
 workflows:
   myworkflow:
     jobs:
       - create_infra
-          # requires:
-          #   - destroy_environement
