@@ -23,8 +23,8 @@ jobs:
           command: |
             pwd
             ls -ltra
-            apt-get git
-            apt-get ssh
+            yum install git
+            yum install ssh
             aws cloudformation deploy --template-file template.yml --stack-name my-stack --region us-west-1
             #return 1
       #- destroy_environment
