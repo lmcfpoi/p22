@@ -10,12 +10,12 @@ commands:
               --stack-name my-stack
 
 jobs:
-  create_infrastructure:
+  create_infra:
     docker:
       - image: amazon/aws-cli
     steps:
       - checkout
-      - create_infrastructure
+      #- create_infra
       - run:
           name: "Create an AWS stack"
           command: |
@@ -29,6 +29,6 @@ jobs:
 workflows:
   myworkflow:
     jobs:
-      - create_infrastructure
+      - create_infra
           # requires:
           #   - destroy_environement
