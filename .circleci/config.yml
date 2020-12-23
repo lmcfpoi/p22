@@ -23,11 +23,11 @@ jobs:
               --template-file template.yml \
               --stack-name my-stack
             return 0
-      #- destroy_environment:
-      #    when: on_fail
+      - destroy_environment:
+          when: on_fail
 
 workflows:
-  workflow:
+  myworkflow:
     jobs:
       - create_infrastructure
           # requires:
