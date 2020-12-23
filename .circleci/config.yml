@@ -15,7 +15,6 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - checkout
-      #- create_infra
       - run:
           name: "Create an AWS stack"
           command: |
@@ -23,7 +22,7 @@ jobs:
               --template-file template.yml \
               --stack-name my-stack
             # return 1
-      - destroy_environment:
+      - destroy_environment
           when: on_fail
 
 workflows:
