@@ -67,7 +67,7 @@ jobs:
       - run:
           name: "Delete AWS stack for rollback"
           command: |
-            aws cloudformation delete-stack --stack-name mystack
+            aws cloudformation delete-stack --stack-name mystack --region us-west-1
           when: on_fail
 
 workflows:
