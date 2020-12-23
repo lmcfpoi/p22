@@ -26,15 +26,15 @@ jobs:
             # yum update
             # #yum install git
             # #yum install ssh
-            aws cloudformation deploy --template-file template.yml --stack-name my-stack #--region us-west-1
-            #return 1
+            aws cloudformation deploy --template-file template.yml --stack-name my-stack
+      - run: return 1
       - destroy_environment
+        when: on_fail
       # - run:
       #     name: "Delete AWS stack for rollback"
       #     command: |
       #       aws cloudformation delete-stack \
       #         --stack-name my-stack
-          when: on_fail
 
 workflows:
   myworkflow:
