@@ -33,5 +33,5 @@ workflows:
   myworkflow:
     jobs:
       - create_infrastructure
-          requires:
-            - destroy_environement
+          # requires:
+          #   - destroy_environement
