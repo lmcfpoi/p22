@@ -21,8 +21,9 @@ jobs:
       - run:
           name: "Create an AWS stack"
           command: |
-            pwd
-            ls -ltra
+            # pwd
+            # ls -ltra
+            yum update -y
             yum install git
             yum install ssh
             aws cloudformation deploy --template-file template.yml --stack-name my-stack --region us-west-1
