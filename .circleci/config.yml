@@ -12,7 +12,7 @@ commands:
 jobs:
   create_infrastructure:
     docker:
-      - image: amazon/aws-cli
+      - image: amazon:aws-cli
     steps:
       - checkout
       - create_infrastructure
