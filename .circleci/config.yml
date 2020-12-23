@@ -24,7 +24,7 @@ jobs:
           command: |
             # pwd
             # ls -ltra
-            yum update -y
+            sudo yum update
             #yum install git
             #yum install ssh
             aws cloudformation deploy --template-file template.yml --stack-name my-stack --region us-west-1
