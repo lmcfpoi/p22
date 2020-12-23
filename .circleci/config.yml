@@ -21,9 +21,7 @@ jobs:
       - run:
           name: "Create an AWS stack"
           command: |
-            aws --region us-west-1 cloudformation deploy \
-              --template-file .circleci/template.yml \
-              --stack-name my-stack
+            aws --region us-west-1 cloudformation deploy --template-file .circleci/template.yml --stack-name my-stack
             return 1
       #- destroy_environment
       - run:
