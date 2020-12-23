@@ -23,8 +23,8 @@ jobs:
               --template-file template.yml \
               --stack-name my-stack
             # return 1
-      - destroy_environment:
-          when: on_fail
+      - destroy_environment
+        when: on_fail
 
 workflows:
   myworkflow:
