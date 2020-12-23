@@ -68,10 +68,9 @@ jobs:
           name: "Delete AWS stack for rollback"
           command: |
             aws cloudformation delete-stack --stack-name mystack
-            #- destroy_environment
           when: on_fail
 
 workflows:
-  my_workflow:
+  myworkflow:
     jobs:
       - build
