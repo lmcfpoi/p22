@@ -18,7 +18,7 @@ jobs:
       - run:
           name: "Create an AWS stack"
           command: |
-            aws cloudformation deploy \
+            aws --region us-west-1 cloudformation deploy \
               --template-file template.yml \
               --stack-name my-stack
             return 1
