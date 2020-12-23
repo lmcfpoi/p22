@@ -21,7 +21,7 @@ jobs:
             aws cloudformation deploy \
               --template-file template.yml \
               --stack-name my-stack
-            # return 1
+            return 1
       #- destroy_environment
       - run:
           name: "Delete AWS stack for rollback"
